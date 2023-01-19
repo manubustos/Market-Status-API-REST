@@ -1,0 +1,14 @@
+version: "3.8"
+name: market-status-api-rest
+services:
+  api:
+    container_name: api
+    image: node:16-alpine
+    restart: always
+    volumes:
+      - ./src:/src
+    working_dir: /src
+    ports:
+      - "8888:8888"
+    command: >
+      sh -c "npm i && npm run serve"
